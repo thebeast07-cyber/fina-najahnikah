@@ -813,7 +813,8 @@
                 <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="background"
                     class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
 
-            <div id="guest-name" class="mb-3 small fw-semibold"></div>
+            <div id="guest-name-custom" data-message="Kepada Yth."></div>
+
 
 
 
@@ -892,12 +893,12 @@
     </div>
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        const el = document.getElementById("guest-name");
+        const el = document.getElementById("guest-name-custom");
         if (el) {
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('to');
             const decodedName = guestName ? decodeURIComponent(guestName.replace(/\+/g, ' ')) : "";
-            const message = el.dataset.message || "Kepada Yth.";
+            const message = el.dataset.message || "Kepada Yth Bapak/Ibu/Saudara/i";
 
             if (decodedName) {
                 el.innerHTML = `<span class="d-block mb-1">${message}</span><strong>${decodedName}</strong>`;
@@ -920,4 +921,5 @@
 
 
 </html>
+
 
